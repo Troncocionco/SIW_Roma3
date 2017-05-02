@@ -27,7 +27,7 @@ public class Product {
 	@Column(nullable=false)
 	private String code;
 	
-	@ManyToMany(mappedBy="product")
+	@ManyToMany(mappedBy="products")
 	private List<Provider> providers;
 	
 	public Product() {
@@ -40,67 +40,91 @@ public class Product {
 		this.code = code;
 	}
 
-	// Getters & Setters
-
+	//Getters & Setters
+	
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return the price
+	 */
 	public Float getPrice() {
 		return price;
 	}
 
+	/**
+	 * @param price the price to set
+	 */
 	public void setPrice(Float price) {
 		this.price = price;
 	}
 
+	/**
+	 * @return the description
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * @param description the description to set
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	/**
+	 * @return the code
+	 */
 	public String getCode() {
 		return code;
 	}
 
+	/**
+	 * @param code the code to set
+	 */
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
-	public boolean equals(Object obj) {
-		Product product = (Product)obj;
-		return this.getCode().equals(product.getCode());
+
+	/**
+	 * @return the providers
+	 */
+	public List<Provider> getProviders() {
+		return providers;
+	}
+
+	/**
+	 * @param providers the providers to set
+	 */
+	public void setProviders(List<Provider> providers) {
+		this.providers = providers;
 	}
 	
-	public int hashCode(){
-		return this.code.hashCode();
-	}
-	
-	public String toString() {
-		final StringBuilder sb = new StringBuilder();
-		sb.append("Product");
-		sb.append("{id=").append(id);
-		sb.append(",name=").append(name);
-		sb.append(",price=").append(price);
-		sb.append(",description=").append(description);
-		sb.append(", code=").append(code);
-		sb.append("}\n");
-		return sb.toString();
-	}
 	
 }

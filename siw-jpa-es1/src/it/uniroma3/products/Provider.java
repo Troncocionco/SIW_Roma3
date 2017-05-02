@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Provider {
@@ -21,11 +22,14 @@ public class Provider {
 	private String phoneNumber;
 	@Column(nullable=false)
 	private String email;
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private String vatin;
 	
 	@ManyToMany
 	private List<Product> products;
+	
+	@OneToOne
+	private Address address;
 
 	public Provider() {
 		}
@@ -37,45 +41,105 @@ public class Provider {
 		this.vatin = vatin;
 	}
 
-	// Getters & Setters
+	//Getters & Setters
 	
+	/**
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return the phoneNumber
+	 */
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
+	/**
+	 * @param phoneNumber the phoneNumber to set
+	 */
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
+	/**
+	 * @return the email
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * @param email the email to set
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/**
+	 * @return the vatin
+	 */
 	public String getVatin() {
 		return vatin;
 	}
 
+	/**
+	 * @param vatin the vatin to set
+	 */
 	public void setVatin(String vatin) {
 		this.vatin = vatin;
-	}	
+	}
+
+	/**
+	 * @return the products
+	 */
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	/**
+	 * @param products the products to set
+	 */
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	/**
+	 * @return the address
+	 */
+	public Address getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	
 }
