@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -26,16 +27,20 @@ public class Customer {
 	private String email;
 	@Column(nullable=false)
 	private String phoneNumber;
-	@Column(nullable=false)
+	
+	@Column(nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date registrationDate;
 	
 	@OneToMany(mappedBy="customer")
 	private List<Order> orders;
+	
+	@OneToOne
+	private Address address;
 	
 	public Customer() {
 		}

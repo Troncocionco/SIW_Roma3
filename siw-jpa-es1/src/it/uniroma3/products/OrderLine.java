@@ -26,7 +26,8 @@ public class OrderLine {
 	@OneToMany
 	private List<Product> products;
 	
-	public OrderLine(){}
+	public OrderLine(){
+		}
 	
 	public OrderLine(Float unitPrice, Integer quantity){
 		this.unitPrice = unitPrice;

@@ -22,9 +22,7 @@ public class Provider {
 	private String phoneNumber;
 	@Column(nullable=false)
 	private String email;
-	@Column(nullable=true)
-	private String vatin;
-	
+
 	@ManyToMany
 	private List<Product> products;
 	
@@ -34,11 +32,10 @@ public class Provider {
 	public Provider() {
 		}
 	
-	public Provider(String name, String phoneNumber, String email, String vatin){
+	public Provider(String name, String phoneNumber, String email){
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.vatin = vatin;
 	}
 
 	//Getters & Setters
@@ -99,19 +96,6 @@ public class Provider {
 		this.email = email;
 	}
 
-	/**
-	 * @return the vatin
-	 */
-	public String getVatin() {
-		return vatin;
-	}
-
-	/**
-	 * @param vatin the vatin to set
-	 */
-	public void setVatin(String vatin) {
-		this.vatin = vatin;
-	}
 
 	/**
 	 * @return the products

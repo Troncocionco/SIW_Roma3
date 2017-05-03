@@ -29,8 +29,6 @@ public class Order {
 	@ManyToOne
 	private Customer customer;
 	
-	@OneToOne
-	private Address address;
 	
 	public Order(){
 		}
@@ -97,19 +95,7 @@ public class Order {
 		this.customer = customer;
 	}
 
-	/**
-	 * @return the address
-	 */
-	public Address getAddress() {
-		return address;
-	}
 
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 	
 	
 }

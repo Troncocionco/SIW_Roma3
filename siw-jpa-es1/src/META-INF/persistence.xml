@@ -7,6 +7,7 @@
 		<class>it.uniroma3.products.Provider</class>
 		<class>it.uniroma3.products.Order</class>
 		<class>it.uniroma3.products.OrderLine</class>
+		<class>it.uniroma3.products.Customer</class>
 		<class>it.uniroma3.products.Address</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
