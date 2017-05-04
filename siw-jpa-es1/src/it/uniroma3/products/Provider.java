@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,13 +25,17 @@ public class Provider {
 	@Column(nullable=false)
 	private String email;
 
+	//ASSOCIAZIONI
+	
 	@ManyToMany
 	private List<Product> products;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "address_fk")
 	private Address address;
 
+	//COSTRUTTORI
+	
 	public Provider() {
 		}
 	

@@ -27,8 +27,12 @@ public class Product {
 	@Column(nullable=false)
 	private String code;
 	
+	//ASSOCIAZIONI
+	
 	@ManyToMany(mappedBy="products")
 	private List<Provider> providers;
+	
+	//COSTRUTTORI
 	
 	public Product() {
 	}

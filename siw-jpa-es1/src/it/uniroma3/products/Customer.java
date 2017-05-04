@@ -3,13 +3,16 @@ package it.uniroma3.products;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -27,20 +30,23 @@ public class Customer {
 	private String email;
 	@Column(nullable=false)
 	private String phoneNumber;
-	
 	@Column(nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
-	
 	@Column(nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date registrationDate;
 	
-	@OneToMany(mappedBy="customer")
+	//ASSOCIAZIONI
+	
+	@OneToMany(mappedBy="customer",fetch = FetchType.LAZY)
+	@OrderBy("creationdate asc")
 	private List<Order> orders;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private Address address;
+	
+	//COSTRUTTORI
 	
 	public Customer() {
 		}

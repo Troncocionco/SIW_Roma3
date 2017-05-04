@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,12 +24,15 @@ public class Order {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationTime;
 	
-	@OneToMany
+	//ASSOCIAZIONI
+	
+	@OneToMany(fetch = FetchType.LAZY)
 	private List <OrderLine> orderlines;
 	
 	@ManyToOne
 	private Customer customer;
 	
+	//COSTRUTTORI
 	
 	public Order(){
 		}
