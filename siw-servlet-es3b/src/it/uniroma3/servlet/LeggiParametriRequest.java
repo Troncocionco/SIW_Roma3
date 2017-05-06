@@ -30,6 +30,7 @@ public class LeggiParametriRequest extends HttpServlet {
 	session.setAttribute("NOME",nome);
 	session.setAttribute("COGNOME",cognome);
 
+	//encodeUrl();
 	/****************************************************************/
 	
 	// inoltro RICHIESTA

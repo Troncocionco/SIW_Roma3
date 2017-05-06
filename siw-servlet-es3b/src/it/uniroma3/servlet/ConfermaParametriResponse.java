@@ -23,7 +23,7 @@ public class ConfermaParametriResponse extends HttpServlet {
 			//imposto il tipo di documento(HTML)
 			response.setContentType("text/html");
 			
-			response.setContentType("text/html");
+
 			PrintWriter out = response.getWriter();
 			
 			out.println("<!DOCTYPE html>"); out.println("<html>");
