@@ -25,8 +25,9 @@ public class MostraParametri extends HttpServlet {
 		String address = (String)request.getRemoteAddr();
 		String host = (String)request.getRemoteHost();
 		String userAgent = request.getHeader("User-Agent");
-
-
+		
+		/*********************************************************/
+		
 		// gestione della RISPOSTA
 
 		//preparo il tipo (HTML)
@@ -39,6 +40,7 @@ public class MostraParametri extends HttpServlet {
 		 * creata invocando il metodo getWriter() sull'oggetto 
 		 * response*/
 		PrintWriter out = response.getWriter();
+		
 		//scrivo il corpo
 		out.println("<!DOCTYPE html>"); out.println("<html>");
 		out.println("<head>");

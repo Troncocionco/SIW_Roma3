@@ -38,7 +38,7 @@ public class ConfermaParametriResponse extends HttpServlet {
 			out.println("<li>Cognome: <b>"+session.getAttribute("COGNOME")+"</b></li>");
 			out.println("</ul>");
 			out.println("<br /> <a href=\"mostraDati\" value=\"Conferma\">Conferma</a>");
-			out.println("<br /> <a href=\"processaDati\" value=\"Modifica\"/>Modifica</a>");
+			out.println("<br /> <a href=\"inserimento.html\" value=\"Modifica\"/>Modifica</a>");
 			out.println("</body>\n</html> ");
 			
 		}
