@@ -16,12 +16,14 @@ public class MostraParametri extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		// gestione della RICHIESTA
+		
+		/*GESTIONE DELLA RICHIESTA*/ 
 
 		// leggo i parametri
 		String nome = request.getParameter("nome").toUpperCase();
 		String cognome = request.getParameter("cognome").toUpperCase();
 		
+		//memorizzo i dati della sessione
 		HttpSession session =request.getSession();
 		session.setAttribute("NOME", nome);
 		session.setAttribute("COGNOME", cognome);
