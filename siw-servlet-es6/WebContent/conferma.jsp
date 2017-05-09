@@ -17,7 +17,7 @@
 				 <b><% out.println(session.getAttribute("COGNOME"));%></b>
 			</li>
 		</ul>
-	<br /> <a href="/siw-servlet-es6/jsp/mostra.jsp" value="Conferma">Confirm</a>
-	<br /> <a href="/siw-servlet-es6/inserimento.html" value="Modifica">Modify</a>
+	<br /> <a href="/mostra.jsp" value="Conferma">Confirm</a>
+	<br /> <a href="/inserimento.html" value="Modifica">Modify</a>
 	</body>
 </html>

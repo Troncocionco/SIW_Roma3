@@ -36,7 +36,7 @@ public class LeggiParametriRequest extends HttpServlet {
 	// inoltro RICHIESTA
 	
 	ServletContext application = getServletContext();
-	RequestDispatcher rd = application.getRequestDispatcher("/jsp/conferma.jsp");
+	RequestDispatcher rd = application.getRequestDispatcher("/conferma.jsp");
 	rd.forward(request, response);
 	return;
 	
