@@ -29,7 +29,5 @@
 	<h1>Last Name:<% out.print(request.getAttribute("lastNameErr")); %></h1>
 	<h1>Matricola: <% out.print(request.getAttribute("matricolaErr")); %></h1>
 
-	
-
 </body>
 </html>
