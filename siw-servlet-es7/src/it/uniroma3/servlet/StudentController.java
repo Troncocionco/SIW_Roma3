@@ -20,20 +20,16 @@ public class StudentController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lasstName");
+		String lastName = request.getParameter("lastName");
 		String matricola = request.getParameter("matricola");
-		boolean errors = false;
+		
+		Boolean errors = false;
 		
 		String nextPage = "/student.jsp";
+		
 		if( firstName == null || firstName.equals("")) {
 			request.setAttribute("firstNameErr", "First Name is mandatory");
 			errors = true;
-		}
-		if( firstName == null){
-			request.setAttribute("test1_firstName", "Errore su firstName==null");
-		}
-		if( firstName.equals("")){
-			request.setAttribute("test2_firstName","Errore sul firstName.equal" );
 		}
 		
 		if( lastName == null || lastName.equals("")) {
@@ -59,6 +55,16 @@ public class StudentController extends HttpServlet {
 		else {
 			nextPage = "/newStudent.jsp";
 			request.setAttribute("test", "controlloFallito");
+
+//			String test1= "";
+//			String test2= "";
+//			if(firstName.equals("")){test1 = "é vuota"; }
+//			else {test1 = "non è vuota";}
+//			
+//			if(firstName==null){test2 = "é null"; }
+//			else {test2 = "non è null";}
+//			request.setAttribute("test1_firstName",test1);
+//			request.setAttribute("test2_firstName",test2);
 		}
 		
 		nextPage = response.encodeURL(nextPage);

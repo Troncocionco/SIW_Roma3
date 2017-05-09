@@ -24,9 +24,12 @@
 	
 	<div><input type="submit" name="submit" value="invia" /></div>
 	</form>
-	<h1><% out.print(request.getAttribute("test")); %></h1>
-	<h1><% out.print(request.getAttribute("test1")); %></h1>
-	<h1><% out.print(request.getAttribute("test2")); %></h1>
+	<h1>Controllo: <% out.print(request.getAttribute("test")); %></h1>
+	<h1>First Name: <% out.print(request.getAttribute("firstNameErr")); %></h1>
+	<h1>Last Name:<% out.print(request.getAttribute("lastNameErr")); %></h1>
+	<h1>Matricola: <% out.print(request.getAttribute("matricolaErr")); %></h1>
+
+	
 
 </body>
 </html>
