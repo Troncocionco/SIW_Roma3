@@ -7,11 +7,11 @@
 </head>
 <body>
 
-	<h1><% out.print(((Student)(session.getAttribute("student"))).getFirstName()); %>
-		<% out.print(((Student)(session.getAttribute("student"))).getLastName()); %>
-	</h1>
+	<h1>${student.firstName} ${student.lastName}  </h1>
 	<h2>Details</h2>
-	<div>Matricola: <% out.print(((Student)(session.getAttribute("student"))).getMatricola()); %></div>
-
+	<div>Matricola: ${student.matricola} </div>
+	<!-- out.print(((Student)(session.getAttribute("student"))).getFirstName());  -->
+	<!-- out.print(((Student)(session.getAttribute("student"))).getLastName()); -->
+	<!-- out.print(((Student)(session.getAttribute("student"))).getMatricola()); -->
 </body>
 </html>

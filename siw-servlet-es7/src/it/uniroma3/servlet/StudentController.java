@@ -56,17 +56,7 @@ public class StudentController extends HttpServlet {
 			nextPage = "/newStudent.jsp";
 			request.setAttribute("test", "controlloFallito");
 		}
-//			String test1= "";
-//			String test2= "";
-//			if(firstName.equals("")){test1 = "é vuota"; }
-//			else {test1 = "non è vuota";}
-//			
-//			if(firstName==null){test2 = "é null"; }
-//			else {test2 = "non è null";}
-//			request.setAttribute("test1_firstName",test1);
-//			request.setAttribute("test2_firstName",test2);
-		
-		
+			
 		nextPage = response.encodeURL(nextPage);
 		ServletContext application = getServletContext();
 		RequestDispatcher rd = application.getRequestDispatcher(nextPage);
