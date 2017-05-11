@@ -35,8 +35,16 @@ public class ControllerDati extends HttpServlet {
 		prodotto2.setCodice("48");
 		prodotto2.setDescrizione("bla bla bla");
 		prodotti.add(prodotto2);
+
+		Prodotto prodotto3 = new Prodotto();
+		prodotto3.setNome("Bomba Atomica");
+		prodotto3.setPrezzo(3000F);
+		prodotto3.setCodice("48");
+		prodotto3.setDescrizione("bla bla bla");
+		prodotti.add(prodotto3);
 		
 		request.setAttribute("prodotti", prodotti);
+		
 		response.encodeURL("/prodotti.jsp");
 		ServletContext application = getServletContext();
 		RequestDispatcher rd = application.getRequestDispatcher("/prodotti.jsp");
