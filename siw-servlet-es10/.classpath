@@ -8,8 +8,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/standard.jar"/>
 	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/standard.jar"/>
 	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/postgresql-42.0.0.jar"/>
 	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/jstl.jar"/>
 	<classpathentry kind="lib" path="/home/giacomo/Dropbox/Università/Magistrale/Sistemi Informativi su Web/lib&amp;utility/jsp-api.jar"/>
