@@ -28,6 +28,16 @@ public class ProductController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		/*If request.getParameter("command") != null )
+		 * long id = Long.parseLong(request.getParameter("id");
+		 * ProductService pv = new ProductService();
+		 * Product p = getOneProduct(id);
+		 * pv.delete(p);
+		 * request.setAttribute("prodotti",pv.getProdotti());
+		 * nextPage = "/linkProdotti.jsp";
+		 * else { TUTTO IL RESTO*/
+		
+		
 		//Creo e rendo disponibile riferimento a oggetto product
 		Product  product = new Product();
 		request.setAttribute("product", product);

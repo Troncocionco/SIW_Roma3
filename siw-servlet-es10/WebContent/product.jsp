@@ -11,12 +11,15 @@
 <body>
 
 		<h1>Prodotti nel catalogo:</h1>
-
-		<ul>
-			<c:forEach var="product" items="${products}">
-				<li>${product.name}, ${product.description}, ${product.price}E, SCADENZA: ${product.expDate}</li>
-			</c:forEach>
-		</ul>
+		<form action="controller" method="get">
+			<ul>
+				<c:forEach var="product" items="${products}">
+					<li>${product.name},${product.description}, ${product.price}E,
+						SCADENZA: ${product.expDate}</li>
+					<input type="submit"  name="commad" value="cancella" >
+				</c:forEach>
+			</ul>
+		</form>
 		
 		<%-- 			<li> <b>Nome:</b> ${product.name} <br>
 				 <b>Prezzo:</b> ${product.price} euro <br>
