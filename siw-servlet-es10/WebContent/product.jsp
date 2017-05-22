@@ -11,12 +11,13 @@
 <body>
 
 		<h1>Prodotti nel catalogo:</h1>
-		<form action="controller" method="get">
+		<form action="controller" method="post">
 			<ul>
 				<c:forEach var="product" items="${products}">
-					<li>${product.name},${product.description}, ${product.price}E,
-						SCADENZA: ${product.expDate}</li>
-					<input type="submit"  name="commad" value="cancella" >
+					<li>${product.name} 
+						<input type="submit"  name="command" value="cancella" >
+						<input type="hidden" name="id" value="${product.id}">
+					</li>
 				</c:forEach>
 			</ul>
 		</form>

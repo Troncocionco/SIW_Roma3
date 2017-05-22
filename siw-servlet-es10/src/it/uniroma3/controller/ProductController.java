@@ -1,5 +1,6 @@
 package it.uniroma3.controller;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,30 +38,40 @@ public class ProductController extends HttpServlet{
 		 * nextPage = "/linkProdotti.jsp";
 		 * else { TUTTO IL RESTO*/
 		
-		
-		//Creo e rendo disponibile riferimento a oggetto product
-		Product  product = new Product();
-		request.setAttribute("product", product);
-				
 		//La prossima pagina
 		String nextPage;
 		
-		
-		/*		VALIDAZIONE		*/
-		
-		//Creo oggetto validatore
-		ProductValidator validator = new ProductValidator();
-		
-		if(validator.validate(request)) {
-			//Rendi l'inserimento persistente
-			ProductService service = new ProductService();
-			service.insertProduct(product);
+		if(request.getParameter("command") != null) {
+			long id = Long.parseLong(request.getParameter("id"));
+			System.out.println(id);
+			ProductService pv = new ProductService();
+			Product p = pv.getOneProduct(id);
+			pv.delete(p);
+			request.setAttribute("products",pv.getProducts());
 			nextPage = "/product.jsp";
 		}
 		else {
-			//Ritorno alla pagina inserimento
-			nextPage = "/index.jsp";
-		}
+			//Creo e rendo disponibile riferimento a oggetto product
+			Product  product = new Product();
+			request.setAttribute("product", product);
+					
+			/*		VALIDAZIONE		*/
+			
+			//Creo oggetto validatore
+			ProductValidator validator = new ProductValidator();
+			
+			if(validator.validate(request)) {
+				//Rendi l'inserimento persistente
+				ProductService service = new ProductService();
+				service.insertProduct(product);
+				nextPage = "/product.jsp";
+			}
+			else {
+				//Ritorno alla pagina inserimento
+				nextPage = "/index.jsp";
+			}
+			
+		}//End else
 		
 		/*		INOLTRO PROSSIMA PAGINA		*/
 		

@@ -50,10 +50,19 @@ public class ProductService {
 		em = emf.createEntityManager();
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		em.remove(em.contains(p)	? p : em.merge(p));
+		em.remove(em.contains(p) ? p : em.merge(p));
 		et.commit();
 		em.close();
 		emf.close();
+	}
+	
+	public Product getOneProduct(long id) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("esercitazione-unit");
+		em = emf.createEntityManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		Product p = em.find(Product.class, id);
+		return p;
 	}
 	
 }
