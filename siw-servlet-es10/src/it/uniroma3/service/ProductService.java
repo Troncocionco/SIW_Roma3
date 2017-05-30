@@ -37,7 +37,7 @@ public class ProductService {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("esercitazione-unit");
 		this.em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
+		EntityTransaction tx = em.getTransaction(); tan
 		tx.begin();
 		TypedQuery<Product> query = em.createNamedQuery("findAll", Product.class);
 		List<Product> products = query.getResultList();
@@ -50,7 +50,8 @@ public class ProductService {
 		em = emf.createEntityManager();
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		em.remove(em.contains(p) ? p : em.merge(p));
+		em.remove(em.contains(p) ? p : em.merge(p));	
+		//Cerca per operatore ternario:"Se em.contains(p) è true, allora p, altrimenti em.merge(p)(
 		et.commit();
 		em.close();
 		emf.close();
